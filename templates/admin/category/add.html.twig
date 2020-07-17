@@ -1,0 +1,38 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Hello dssd!{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        {% include 'admin/common/sidebar.html.twig' %}
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                {% include 'admin/common/header.html.twig' %}
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Category</h1>
+                    </div>
+                    {% include "admin/category/_form.html.twig" %}
+                    {#<div class="row">
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <button type="submit" class="btn btn-primary">{{ button_label|default('Submit') }}</button>
+                        {{ form_end(form) }}
+                        <form class="user">
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" placeholder="Enter Email Address...">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control form-control-user" placeholder="Password">
+                            </div>
+                            <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                Login
+                            </a>
+                        </form>
+                    </div>#}
+                </div>
+            </div>
+            {% include 'admin/common/footer.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

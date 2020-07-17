@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ittectexpert.iml" filepath="$PROJECT_DIR$/.idea/ittectexpert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sportsgearswag/.idea/sportsgearswag.iml" filepath="$PROJECT_DIR$/../sportsgearswag/.idea/sportsgearswag.iml" />
+    </modules>
+  </component>
+</project>
