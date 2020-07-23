@@ -1,6 +1,6 @@
 {% extends 'admin_base.html.twig' %}
 
-{% block title %}Hello dssd!{% endblock %}
+{% block title %}Add Category{% endblock %}
 
 {% block body %}
     <div id="wrapper">
@@ -8,28 +8,26 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 {% include 'admin/common/header.html.twig' %}
-                <div class="container-fluid">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Category</h1>
+                <div class="sb-page-header pb-10 sb-page-header-dark bg-gradient-primary-to-secondary">
+                    <div class="container-fluid">
+                        <div class="sb-page-header-content py-5">
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                <h1 class="h3 mb-0 text-gray-800">Add Category</h1>
+                                <a href="{{ url("category") }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">View All</a>
+                            </div>
+                        </div>
                     </div>
-                    {% include "admin/category/_form.html.twig" %}
-                    {#<div class="row">
-                        {{ form_start(form) }}
-                        {{ form_widget(form) }}
-                        <button type="submit" class="btn btn-primary">{{ button_label|default('Submit') }}</button>
-                        {{ form_end(form) }}
-                        <form class="user">
-                            <div class="form-group">
-                                <input type="email" class="form-control form-control-user" placeholder="Enter Email Address...">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control form-control-user" placeholder="Password">
-                            </div>
-                            <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                Login
-                            </a>
-                        </form>
-                    </div>#}
+                </div>
+
+                <div class="container-fluid mt-n10">
+                    <div class="flush-alert">
+                        {% include 'admin/common/flash.html.twig' %}
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            {{ include('admin/category/_form.html.twig', {'button_label': 'Add'}) }}
+                        </div>
+                    </div>
                 </div>
             </div>
             {% include 'admin/common/footer.html.twig' %}

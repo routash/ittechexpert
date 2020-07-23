@@ -1,12 +1,14 @@
 {#{% form_theme form 'form/bootstrap_4_layout.html.twig' %}#}
 {{ form_start(form) }}
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         {{ form_row(form.title, {'attr': {'class': 'form-control'} }) }}
-        {{ form_errors(form.title) }}
     </div>
-    <div class="col-md-6">
-        {{ form_row(form.slug, {'attr': {'class': 'form-control'} }) }}
+    <div class="col-md-12 mt-4">
+        {{ form_row(form.description, {'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="col-md-12 mt-4">
+        {{ form_row(form.program, {'attr': {'class': 'form-control'} }) }}
     </div>
 </div>
 {{ form_widget(form) }}

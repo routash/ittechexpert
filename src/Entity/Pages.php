@@ -2,15 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CategoryRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Repository\PagesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CategoryRepository::class)
+ * @ORM\Entity(repositoryClass=PagesRepository::class)
  */
-class Category
+class Pages
 {
     /**
      * @ORM\Id()
@@ -20,14 +18,14 @@ class Category
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=255)
      */
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="text")
      */
-    private $slug;
+    private $description;
 
     /**
      * @ORM\Column(type="datetime")
@@ -40,21 +38,15 @@ class Category
     private $updated_at;
 
     /**
-     * @ORM\OneToMany(targetEntity=Programs::class, mappedBy="category")
+     * @ORM\ManyToOne(targetEntity=Programs::class, inversedBy="pages")
      */
-    private $programs;
+    private $program;
 
     public function __construct()
     {
         $this->added_at = new \DateTime();
         $this->updated_at = new \DateTime();
-        $this->programs = new ArrayCollection();
     }
-    public function __toString()
-    {
-        return $this->title;
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -72,14 +64,14 @@ class Category
         return $this;
     }
 
-    public function getSlug(): ?string
+    public function getDescription(): ?string
     {
-        return $this->slug;
+        return $this->description;
     }
 
-    public function setSlug(string $slug): self
+    public function setDescription(string $description): self
     {
-        $this->slug = $slug;
+        $this->description = $description;
 
         return $this;
     }
@@ -108,33 +100,14 @@ class Category
         return $this;
     }
 
-    /**
-     * @return Collection|Programs[]
-     */
-    public function getPrograms(): Collection
+    public function getProgram(): ?Programs
     {
-        return $this->programs;
+        return $this->program;
     }
 
-    public function addProgram(Programs $program): self
+    public function setProgram(?Programs $program): self
     {
-        if (!$this->programs->contains($program)) {
-            $this->programs[] = $program;
-            $program->setCategory($this);
-        }
-
-        return $this;
-    }
-
-    public function removeProgram(Programs $program): self
-    {
-        if ($this->programs->contains($program)) {
-            $this->programs->removeElement($program);
-            // set the owning side to null (unless already changed)
-            if ($program->getCategory() === $this) {
-                $program->setCategory(null);
-            }
-        }
+        $this->program = $program;
 
         return $this;
     }

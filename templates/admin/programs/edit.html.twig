@@ -1,0 +1,25 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Hello dssd!{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        {% include 'admin/common/sidebar.html.twig' %}
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                {% include 'admin/common/header.html.twig' %}
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Edit Program</h1>
+                        <a href="{{ url("programs") }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">View All</a>
+                    </div>
+                    <div class="flush-alert">
+                        {% include 'admin/common/flash.html.twig' %}
+                    </div>
+                    {{ include("admin/programs/_form.html.twig", {'button_label': 'Update'}) }}
+                </div>
+            </div>
+            {% include 'admin/common/footer.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

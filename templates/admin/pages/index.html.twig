@@ -10,8 +10,8 @@
                 {% include 'admin/common/header.html.twig' %}
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Category</h1>
-                        <a href="{{ url("category_add") }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add New Category</a>
+                        <h1 class="h3 mb-0 text-gray-800">Pages</h1>
+                        <a href="{{ url("add_pages") }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add New Page</a>
                     </div>
                     <div class="flush-alert">
                         {% include 'admin/common/flash.html.twig' %}
@@ -23,21 +23,21 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Title</th>
-                                    <th>Slug</th>
+                                    <th>Description</th>
                                     <th>Inserted At</th>
                                     <th>Updated At</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for category in  categoryList %}
+                                {% for page in  pages %}
                                     <tr>
-                                        <td>{{ category.id }}</td>
-                                        <td>{{ category.title }}</td>
-                                        <td>{{ category.slug }}</td>
-                                        <td>{{ category.addedAt|date("m/d/Y") }}</td>
-                                        <td>{{ category.updatedAt|date("m/d/Y") }}</td>
-                                        <td><a href="{{ url('category_edit', {'id': category.id}) }}"><button class="btn btn-sm btn-primary delete-btn">Edit</button></a> <a href="{{ url('category_delete', {'id': category.id}) }}" class="delete-category"><button class="btn btn-sm btn-danger delete-btn">Delete</button></a></td>
+                                        <td>{{ page.id }}</td>
+                                        <td>{{ page.title }}</td>
+                                        <td>{{ page.description }}</td>
+                                        <td>{{ page.addedAt|date("m/d/Y") }}</td>
+                                        <td>{{ page.updatedAt|date("m/d/Y") }}</td>
+                                        <td><a href="{{ url('page_edit', {'id': page.id}) }}"><button class="d-sm-inline-block btn btn-sm btn-primary">Edit</button></a> <a href="{{ url('page_delete', {'id': page.id}) }}" class="delete-page"><button class="d-sm-inline-block btn btn-sm btn-danger delete-btn">Delete</button></a></td>
                                     </tr>
                                 {% endfor %}
 
@@ -52,8 +52,8 @@
     </div>
     <script>
         $(document).ready(function(){
-            $('.delete-category').click(function () {
-                if (!confirm('Are you sure you want to delete this category?')) {
+            $('.delete-page').click(function () {
+                if (!confirm('Are you sure you want to delete this page?')) {
                     return false;
                 }
             })

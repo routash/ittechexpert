@@ -42,6 +42,33 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ url('pages') }}" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Pages:</h6>
+                <a class="collapse-item" href="{{ url('pages') }}">All Pages</a>
+                <a class="collapse-item" href="{{ url('add_pages') }}">Add Page</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ url('programs') }}" data-toggle="collapse" data-target="#collapsePrograms" aria-expanded="true" aria-controls="collapsePrograms">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>programs</span>
+        </a>
+        <div id="collapsePrograms" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Programs:</h6>
+                <a class="collapse-item" href="{{ url('programs') }}">All Program</a>
+                <a class="collapse-item" href="{{ url('add_programs') }}">Add Program</a>
+            </div>
+        </div>
+    </li>
+
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">

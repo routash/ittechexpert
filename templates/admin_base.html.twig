@@ -10,6 +10,7 @@
     {% block stylesheets %}{% endblock %}
     <link href="{{ asset('assets/admin/css/sb-admin-2.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+    <script src="{{ asset('assets/admin/js/jquery.min.js') }}" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
 {% block body  %}
@@ -17,7 +18,8 @@
 </body>
 {% block javascripts %}
     <script src="{{ asset('assets/admin/js/jquery.min.js') }}" crossorigin="anonymous"></script>
-    <script src="{{ asset('assets/admin/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/bootstrap.min.js') }}" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/admin/js/sb-admin-2.js') }}" crossorigin="anonymous"></script>
+
 {% endblock %}
 </html>

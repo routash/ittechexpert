@@ -110,5 +110,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="sportsgearswag" />
+    <orderEntry type="module" module-name="sportsgearswag" />
   </component>
 </module>
